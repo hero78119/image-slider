@@ -1,6 +1,6 @@
 
 var imgFile = [];
-var fileNum = 5;
+var fileNum = 3;
 var main = document.querySelector('.main');
 var thumb = document.querySelector('.thumb');
 var prev = document.querySelector('.prev');
@@ -48,7 +48,7 @@ Array.from(pages).forEach(function(item){
 	if (screen.width > 768){
 		item.onmouseover = function(){
 			thumb.classList.add('show');
-			thumb.src = `images/${imgFile[this.num]}.jpeg`;
+			thumb.src = `images/${imgFile[this.num]}.png`;
 		}
 		item.onmouseout = function(){
 			thumb.classList.remove('show');
@@ -59,7 +59,7 @@ Array.from(pages).forEach(function(item){
 // dynamic image
 //-------------------------
 function imgShow(img_num){
-	main.src = `images/${imgFile[img_num]}.jpeg`;
+	main.src = `images/${imgFile[img_num]}.png`;
 }
 imgShow(startNum);
 //-------------------------
@@ -94,7 +94,7 @@ document.onkeydown = function(e) {
 //-------------------------
 // autoplay
 //-------------------------
-startPlay();
+// startPlay();
 
 function startPlay(){
 	if (timer == null){
