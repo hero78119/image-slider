@@ -105,7 +105,7 @@ function startPlay(){
 			}
 			imgShow(startNum);
 			active(startNum);
-		}, 3000)
+		}, 120000)
 	}
 }
 
