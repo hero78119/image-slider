@@ -124,3 +124,47 @@ function stopPlay(){
 	clearInterval(timer);
 	timer = null;
 }
+
+function wetherScroll() {
+    var startX = startY = endX = endY = 0;
+    var body = document.getElementsByClassName("container")[0];
+    console.log(body);
+    body.addEventListener('touchstart', function(event) {
+        var touch = event.targetTouches[0];
+        //滑動起點的座標
+        startX = touch.pageX;
+        startY = touch.pageY;
+        // console.log("startX:" startX "," "startY:" startY);
+    });
+    body.addEventListener("touchmove", function(event) {
+        var touch = event.targetTouches[0];
+        //手勢滑動時，手勢座標不斷變化，取最後一點的座標為最終的終點座標
+        endX = touch.pageX;
+        endY = touch.pageY;
+        // console.log("endX:" endX "," "endY:" endY);
+    })
+    body.addEventListener("touchend", function(event) {
+        var distanceX = endX - startX,
+            distanceY = endY - startY;
+        // console.log("distanceX:" distanceX "," "distanceY:" distanceY);
+        //移動端裝置的螢幕寬度
+        var clientWidth = document.documentElement.clientWidth;
+        // console.log(clientHeight;*0.2);
+        //判斷是否滑動了，而不是螢幕上單擊了
+        if (startX != Math.abs(distanceX)) {
+            //在滑動的距離超過螢幕高度的20%時，做某種操作
+            if (Math.abs(distanceX) > clientWidth * 0.2) {
+                //向下滑實行函式someAction1，向上滑實行函式someAction2
+                if (distanceX < 0 && document.getElementsByClassName("next")[0].style.display != "none") {
+					next.click();
+                } 
+                if (distanceX >= 0 && document.getElementsByClassName("prev")[0].style.display != "none") {
+					prev.click();
+                }
+            }
+        }
+        startX = startY = endX = endY = 0;
+    })
+}
+
+wetherScroll();
