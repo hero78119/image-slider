@@ -1,6 +1,6 @@
 
 var imgFile = [];
-var fileNum = 3;
+var fileNum = 5;
 var main = document.querySelector('.main');
 var thumb = document.querySelector('.thumb');
 var prev = document.querySelector('.prev');
@@ -60,6 +60,17 @@ Array.from(pages).forEach(function(item){
 //-------------------------
 function imgShow(img_num){
 	main.src = `images/${imgFile[img_num]}.png`;
+	if (img_num <= 0) {
+		document.getElementsByClassName("prev")[0].style.display = "none";
+	} else {
+		document.getElementsByClassName("prev")[0].style.display = "";
+	}
+
+	if (img_num >= fileNum - 1) {
+		document.getElementsByClassName("next")[0].style.display = "none";
+	} else {
+		document.getElementsByClassName("next")[0].style.display = "";
+	}
 }
 imgShow(startNum);
 //-------------------------

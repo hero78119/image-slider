@@ -48,6 +48,13 @@ body {
   overflow: hidden;
 }
 
+.box-bottom {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 /*------------------ */
 /* $Header */
 /*------------------ */
@@ -124,12 +131,12 @@ h3 {
   }
 }
 .imgbox span.prev {
-  left: 8px;
+  left: -0px;
   -webkit-animation: arrow_prev 1s infinite;
           animation: arrow_prev 1s infinite;
 }
 .imgbox span.next {
-  right: 8px;
+  right: -0px;
   -webkit-animation: arrow_next 1s infinite;
           animation: arrow_next 1s infinite;
 }
@@ -182,7 +189,7 @@ h3 {
 /* $Page button */
 /*------------------ */
 .page {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
