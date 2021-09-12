@@ -153,7 +153,7 @@ function wetherScroll() {
         //判斷是否滑動了，而不是螢幕上單擊了
         if (startX != Math.abs(distanceX)) {
             //在滑動的距離超過螢幕高度的20%時，做某種操作
-            if (Math.abs(distanceX) > clientWidth * 0.2) {
+            if (Math.abs(distanceX) > clientWidth * 0.1) {
                 //向下滑實行函式someAction1，向上滑實行函式someAction2
                 if (distanceX < 0 && document.getElementsByClassName("next")[0].style.display != "none") {
 					next.click();
